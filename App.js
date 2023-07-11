@@ -9,6 +9,7 @@ import HomeScreen from "./src/screens/HomeScreen";
 import Entypo from "@expo/vector-icons/Entypo";
 import * as SplashScreen from "expo-splash-screen";
 import * as Font from "expo-font";
+import MyScreen from "./src/screens/MyScreen";
 
 
 const Stack = createNativeStackNavigator();
@@ -54,10 +55,17 @@ function App() {
     
     <NavigationContainer>
       <Stack.Navigator>
+      <Stack.Screen
+          name="myScreen"
+          component={MyScreen}
+          options={{headerShown : false}}
+          
+        />
         <Stack.Screen
           name="Home"
           component={HomeScreen}
-          options={{ headerShown: false }}
+         options={{headerShown : false}}
+          
         />
       </Stack.Navigator>
     </NavigationContainer>
