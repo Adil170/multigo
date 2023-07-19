@@ -12,6 +12,7 @@ import * as Font from "expo-font";
 import MyScreen from "./src/screens/MyScreen";
 import FoodDeliveryApp from "./src/screens/foodApp/FoodDeliveryApp";
 import GroceryApp  from './src/screens/groceryApp/GroceryApp'
+import RestaurantScreen from "./src/screens/RestaurantScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -65,11 +66,7 @@ function App() {
             component={HomeScreen}
             options={{ headerShown: false }}
           />
-          <Stack.Screen
-            name="FoodDeliveryApp"
-            component={FoodDeliveryApp}
-            options={{ headerShown: false }}
-          />
+           <Stack.Screen name="Restaurant" component={RestaurantScreen} />
           <Stack.Screen
             name="GroceryApp"
             component={GroceryApp}
