@@ -10,7 +10,8 @@ import Entypo from "@expo/vector-icons/Entypo";
 import * as SplashScreen from "expo-splash-screen";
 import * as Font from "expo-font";
 import MyScreen from "./src/screens/MyScreen";
-
+import FoodDeliveryApp from "./src/screens/foodApp/FoodDeliveryApp";
+import GroceryApp  from './src/screens/groceryApp/GroceryApp'
 
 const Stack = createNativeStackNavigator();
 
@@ -24,7 +25,7 @@ function App() {
         await Font.loadAsync(Entypo.font);
         // Artificially delay for two seconds to simulate a slow loading
         // experience. Please remove this if you copy and paste the code!
-        await new Promise(resolve => setTimeout(resolve, 2000));
+        await new Promise((resolve) => setTimeout(resolve, 2000));
       } catch (e) {
         console.warn(e);
       } finally {
@@ -52,23 +53,30 @@ function App() {
   }
   return (
     <>
-    
-    <NavigationContainer>
-      <Stack.Navigator>
-      <Stack.Screen
-          name="myScreen"
-          component={MyScreen}
-          options={{headerShown : false}}
-          
-        />
-        <Stack.Screen
-          name="Home"
-          component={HomeScreen}
-         options={{headerShown : false}}
-          
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+      <NavigationContainer>
+        <Stack.Navigator>
+          {/* <Stack.Screen
+            name="myScreen"
+            component={MyScreen}
+            options={{ headerShown: false }}
+          /> */}
+          <Stack.Screen
+            name="Home"
+            component={HomeScreen}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="FoodDeliveryApp"
+            component={FoodDeliveryApp}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="GroceryApp"
+            component={GroceryApp}
+            options={{ headerShown: false }}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
     </>
   );
 }

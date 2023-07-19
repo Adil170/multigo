@@ -1,62 +1,47 @@
-import React from 'react';
-import { View, Image, TouchableOpacity,Text } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import React from "react";
+import { View, Image, TouchableOpacity, Text ,ScrollView } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { useNavigation } from "@react-navigation/native";
+import { Ionicons } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 const HomeScreen = () => {
-  const navigation = useNavigation();
-
-//   const handleFoodDeliveryPress = () => {
-//     // Navigate to the food delivery app
-//     navigation.navigate('FoodDeliveryApp');
-//   };
-
-//   const handleGroceryPress = () => {
-//     // Navigate to the grocery app
-//     navigation.navigate('GroceryApp');
-//   };
-
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    <View>
+      <View className="h-36 w-full bg-[#FF6666]">
+        <View className="flex flex-row justify-between mt-10 mx-4">
+          <Ionicons name="menu-outline" size={24} color="white" />
+          <Text className="text-lg text-white">Multi Go address bar</Text>
+          <MaterialCommunityIcons name="cart-check" size={24} color="white" />
+        </View>
+        <View className="bg-white h-10 w-80 rounded-md mt-5 justify-center ml-5">
+          <TouchableOpacity className="flex flex-row justify-start ml-5">
+            <Ionicons name="ios-search-outline" size={20} color="black" />
+            <Text className="text-gray-400">search for shops & resturent</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+      <View className=" flex flex-row h-60 w-full bg-black justify-center ">
+        <View className="bg-red-600 h-[96%] w-[48%] rounded-lg my-2  ">
+          <Text className="text-white"> HEllo ADil</Text>
+        </View>
+        <View className="bg-red-600 h-[96%] w-[48%] rounded-lg mx-2 my-2">
+          <Text className="text-white"> HEllo ADil</Text>
+        </View>
+       
+      </View>
+      <View className=" flex flex-row h-32 w-full bg-gray-500 justify-center ">
+      <View className="bg-red-600 h-[96%] w-[48%] rounded-lg mx-1 my-2">
+          <Text className="text-white"> HEllo ADil</Text>
+        </View>
+        <View className="bg-red-600 h-[96%] w-[48%] rounded-lg  my-2 mx-1 ">
+          <Text className="text-white"> HEllo ADil</Text>
+        </View>
 
-      <TouchableOpacity
-        style={{
-          width: 300,
-          height: 300,
-          borderRadius: 150,
-          backgroundColor: '#f2f2f2',
-          justifyContent: 'center',
-          alignItems: 'center',
-          marginBottom: 20,
-          marginTop : 25
-        }}
-        // onPress={handleFoodDeliveryPress}
-      >
-                <Text className="text-4xl uppercase  font-bold text-yellow-400 ">food delivery</Text>
-        
-        <Image
-          source={{ uri: 'https://plus.unsplash.com/premium_photo-1663013248646-9e524a1301d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80'}} // Replace with your actual image URL
-          style={{ width: 300, height: 300, borderRadius: 150 }}
-        />
-      </TouchableOpacity>
+      </View>
+      <ScrollView />
+      
 
-      <TouchableOpacity
-        style={{
-          width: 300,
-          height: 300,
-          borderRadius: 150,
-          backgroundColor: '#f2f2f2',
-          justifyContent: 'center',
-          alignItems: 'center',
-          marginTop :20
-        }}
-        // onPress={handleGroceryPress}
-      >
-         <Text className="text-4xl uppercase  font-bold text-yellow-400  ">grocery </Text>
-        <Image
-          source={{ uri: 'https://images.unsplash.com/photo-1604719312566-8912e9227c6a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80' }} // Replace with your actual image URL
-          style={{ width: 300, height: 300, borderRadius: 150 }}
-        />
-      </TouchableOpacity>
     </View>
   );
 };
